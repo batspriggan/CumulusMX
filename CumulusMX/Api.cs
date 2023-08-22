@@ -337,9 +337,9 @@ namespace CumulusMX
 
 					if (Station == null)
 					{
+						Response.StatusCode = 500;
 						using (var writer = HttpContext.OpenResponseText(new UTF8Encoding(false)))
 							await writer.WriteAsync($"{{\"Title\":\"Unexpected Error\",\"ErrorCode\":\"500\",\"Description\":\"The station is not running\"}}");
-						Response.StatusCode = 500;
 						return;
 					}
 

@@ -1,4 +1,5 @@
-﻿using System.Configuration.Install;
+﻿using System;
+//using System.Configuration.Install;
 using System.Reflection;
 
 namespace CumulusMX
@@ -8,7 +9,7 @@ namespace CumulusMX
 		private static readonly string ExePath = Assembly.GetExecutingAssembly().Location;
 		public static bool InstallMe()
 		{
-			try
+			/*try
 			{
 				ManagedInstallerClass.InstallHelper(new string[] {
 					SelfInstaller.ExePath
@@ -19,11 +20,13 @@ namespace CumulusMX
 				return false;
 			}
 			return true;
+			*/
+			throw new NotImplementedException();
 		}
 
 		public static bool UninstallMe()
 		{
-			try
+			/*try
 			{
 				ManagedInstallerClass.InstallHelper(new string[] {
 					"/u", SelfInstaller.ExePath
@@ -34,6 +37,8 @@ namespace CumulusMX
 				return false;
 			}
 			return true;
+			*/
+			throw new NotImplementedException();
 		}
 	}
 }

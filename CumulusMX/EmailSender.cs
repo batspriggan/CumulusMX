@@ -5,8 +5,6 @@ using System.Text.RegularExpressions;
 using MailKit;
 using System.Threading;
 using System.IO;
-using System.CodeDom.Compiler;
-using System.CodeDom;
 using System.Threading.Tasks;
 
 namespace CumulusMX
@@ -177,14 +175,15 @@ namespace CumulusMX
 
 		private static string ToLiteral(string input)
 		{
-			using (var writer = new StringWriter())
-			{
-				using (var provider = CodeDomProvider.CreateProvider("CSharp"))
-				{
-					provider.GenerateCodeFromExpression(new CodePrimitiveExpression(input), writer, null);
-					return writer.ToString();
-				}
-			}
+			//using (var writer = new StringWriter())
+			//{
+			//	using (var provider = CodeDomProvider.CreateProvider("CSharp"))
+			//	{
+			//		provider.GenerateCodeFromExpression(new CodePrimitiveExpression(input), writer, null);
+			//		return writer.ToString();
+			//	}
+			//}
+			return $@"{input}";//TODO : TEST
 		}
 
 		public static bool CheckEmailAddress(string email)
